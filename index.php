@@ -204,6 +204,14 @@ class Boss extends Person {
 
     }
 
+    public function getAnnualSalaryHtml(){
+
+        $AnnualSalary = $this->dividend * 12
+            + $this->bonus;
+        return $AnnualSalary;
+            
+    }
+
     public function getHtml() {
 
         return 
