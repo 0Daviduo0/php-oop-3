@@ -119,3 +119,50 @@ class Employee extends Person {
              . $this -> getHireDate() . "<br>";
     }
 }
+
+
+class Boss extends Person {
+
+    //Variabili
+    private $dividend;
+    private $bonus;
+
+    public function __construct($id, $name, $surname, $dateOfBirth, $fiscalCode, $dividend, $bonus) {
+
+        parent::__construct($id, $name, $surname, $dateOfBirth, $fiscalCode);
+        $this -> setSalary($dividend);
+        $this -> setHireDate($bonus);
+
+    }
+
+    public function getDividend() {
+
+        return $this -> dividend;
+
+    }
+
+    public function setDividend($dividend) {
+
+        $this -> dividend = $dividend;
+
+    }
+
+    public function getBonus() {
+
+        return $this -> bonus;
+
+    }
+    public function setBonus($bonus) {
+
+        $this -> bonus = $bonus;
+
+    }
+
+    public function getHtml() {
+
+        return 
+               parent :: getHtml() . "<br>"
+             . $this -> getDividend() . "<br>"
+             . $this -> getBonus() . "<br>";
+    }
+}
