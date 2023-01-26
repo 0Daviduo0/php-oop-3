@@ -1,5 +1,48 @@
 <?php
 
+class Salary {
+
+    //Variabili
+    private $monthly;
+    private $thirteenthMonthly;
+    private $fourteenthMonthly;
+
+    public function getMonthly() {
+
+        return $this -> monthly;
+    }
+    public function setMonthly($monthly) {
+
+        $this -> monthly = $monthly;
+    }
+    public function getThirteenthMonthly() {
+
+        return $this -> thirteenthMonthly;
+    }
+    
+    public function setThirteenthMonthly($thirteenthMonthly) {
+
+        $this -> thirteenthMonthly = $thirteenthMonthly;
+    }
+
+    public function getFourteenthMonthly() {
+
+        return $this -> fourteenthMonthly;
+    }
+    public function setFourteenthMonthly($fourteenthMonthly) {
+
+        $this -> fourteenthMonthly = $fourteenthMonthly;
+    }
+
+    public function getAnnualSalaryHtml(){
+
+        return;
+            
+    }
+
+
+}
+
 class Person {
 
     //Variabili
@@ -77,10 +120,10 @@ class Person {
 class Employee extends Person {
 
     //Variabili
-    private $salary;
+    private array $salary;
     private $hireDate;
 
-    public function __construct($id, $name, $surname, $dateOfBirth, $fiscalCode, $salary, $hireDate) {
+    public function __construct($id, $name, $surname, $dateOfBirth, $fiscalCode, array $salary, $hireDate) {
 
         parent::__construct($id, $name, $surname, $dateOfBirth, $fiscalCode);
         $this -> setSalary($salary);
@@ -130,8 +173,8 @@ class Boss extends Person {
     public function __construct($id, $name, $surname, $dateOfBirth, $fiscalCode, $dividend, $bonus) {
 
         parent::__construct($id, $name, $surname, $dateOfBirth, $fiscalCode);
-        $this -> setSalary($dividend);
-        $this -> setHireDate($bonus);
+        $this -> setDividend($dividend);
+        $this -> setBonus($bonus);
 
     }
 
