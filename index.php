@@ -2,6 +2,7 @@
 
 class Person {
 
+    //Variabili
     private $id;
     private $name;
     private $surname;
@@ -70,5 +71,51 @@ class Person {
              . $this -> getSurname() . "<br>"
              . $this -> getDateOfBirth() . "<br>"
              . $this -> getFiscalCode() . "<br>";
+    }
+}
+
+class Employee extends Person {
+
+    //Variabili
+    private $salary;
+    private $hireDate;
+
+    public function __construct($id, $name, $surname, $dateOfBirth, $fiscalCode, $salary, $hireDate) {
+
+        parent::__construct($id, $name, $surname, $dateOfBirth, $fiscalCode);
+        $this -> setSalary($salary);
+        $this -> setHireDate($hireDate);
+
+    }
+
+    public function getSalary() {
+
+        return $this -> salary;
+
+    }
+
+    public function setSalary($salary) {
+
+        $this -> salary = $salary;
+
+    }
+
+    public function getHireDate() {
+
+        return $this -> salary;
+
+    }
+    public function setHireDate($hireDate) {
+
+        $this -> hireDate = $hireDate;
+
+    }
+
+    public function getHtml() {
+
+        return 
+               parent :: getHtml() . "<br>"
+             . $this -> getSalary() . "<br>"
+             . $this -> getHireDate() . "<br>";
     }
 }
