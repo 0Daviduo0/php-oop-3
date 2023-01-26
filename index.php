@@ -36,7 +36,10 @@ class Salary {
 
     public function getAnnualSalaryHtml(){
 
-        return;
+        $AnnualSalary = $this->monthly * 12
+            + ($this->thirteenthMonthly ? 1 : 0)
+            + ($this->fourteenthMonthly ? 1 : 0);
+        return $AnnualSalary;
             
     }
 
